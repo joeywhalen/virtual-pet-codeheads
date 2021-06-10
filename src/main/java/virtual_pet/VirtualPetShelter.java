@@ -10,7 +10,7 @@ public class VirtualPetShelter {
 
   ArrayList<VirtualPet> virtualOrganicPets = new ArrayList<VirtualPet>(); //ArrayList<VirtualPetOrganic> virtualOrganicPets = new ArrayList<VirtualPetOrganic>();
   ArrayList<VirtualPet> virtualRoboticPets = new ArrayList<VirtualPet>();
-  //Scanner userInput =
+  Scanner userInput = new Scanner(System.in);
 
   String heading1 = "Name";
   String heading2 = "|Hunger";
@@ -31,7 +31,7 @@ public class VirtualPetShelter {
     VirtualPet winnie = new VirtualPet("Winnie", "I have a rumbly in my tumbly.", 25, 40, 60);
     VirtualPet gummi = new VirtualPet("Gummi", "Once was candy for kids, now 'candy' for adults.", 25, 60, 420);
     VirtualPet ticktock = new VirtualPet("Tick-Tock", "I swallowed a clock.  So what?", 40, 50, 60);
-    VirtualPet wally = new VirtualPet("Wally Gator", "Yea, I'm prone to mishaps.  So what?", 50, 60, 70);
+    VirtualPet wally = new VirtualPet("WallyGator", "Yea, I'm prone to mishaps.  So what?", 50, 60, 70);
     virtualOrganicPets.add(yogi);
     virtualOrganicPets.add(smokey);
     virtualOrganicPets.add(winnie);
@@ -41,12 +41,12 @@ public class VirtualPetShelter {
   }
 
   public void initialRoboticPets() {
-    VirtualPet booboo = new VirtualPet("Boo-Boo", "But Yogi, Mr. Ranger isn't gonna like this.", 40, 70, 40);
-    VirtualPet kissyfur = new VirtualPet("Kissyfur", "I used to be a circus bear.", 30, 30, 30);
-    VirtualPet ally = new VirtualPet("Ally Gator", "It's a punny name.  So what?", 35, 70, 40);
-    VirtualPet gummy = new VirtualPet("Gummy", "Yea, I'm a Brony.  So what?", 35, 70, 20);
-    VirtualPet benali = new VirtualPet("Ben Ali", "I'm a prince.  So what?", 50, 60, 70);
-    VirtualPet gabby = new VirtualPet("Gabby", "Yea, I hate Woody Woodpecker.  So what?", 40, 60, 80);
+    RoboticPet booboo = new RoboticPet("Boo-Boo", "But Yogi, Mr. Ranger isn't gonna like this.", 40, 70, 40);
+    RoboticPet kissyfur = new RoboticPet("Kissyfur", "I used to be a circus bear.", 30, 30, 30);
+    RoboticPet ally = new RoboticPet("Ally Gator", "It's a punny name.  So what?", 35, 70, 40);
+    RoboticPet gummy = new RoboticPet("Gummy", "Yea, I'm a Brony.  So what?", 35, 70, 20);
+    RoboticPet benali = new RoboticPet("Ben Ali", "I'm a prince.  So what?", 50, 60, 70);
+    RoboticPet gabby = new RoboticPet("Gabby", "Yea, I hate Woody Woodpecker.  So what?", 40, 60, 80);
     virtualRoboticPets.add(booboo);
     virtualRoboticPets.add(kissyfur);
     virtualRoboticPets.add(ally);
@@ -63,8 +63,8 @@ public class VirtualPetShelter {
   }
 
   public void displayAllRoboticPetsDescriptions() {
-    for (int i = 0; i < virtualRoboticPets.size(); i++) {
-      System.out.println("[" + virtualRoboticPets.get(i).getName() + "]" + " " + virtualRoboticPets.get(i).getDescription());
+    for (VirtualPet virtualRoboticPet : virtualRoboticPets) {
+      System.out.println("[" + virtualRoboticPet.getName() + "]" + " " + virtualRoboticPet.getDescription());
       System.out.println("");
     }
   }
@@ -110,12 +110,94 @@ public class VirtualPetShelter {
   }
 
   public void displayRoboticHealthStatus() {
-    System.out.printf("%-8s %-7s %-7s %-7s %n", heading5, heading6, heading7, heading8);
+    System.out.printf("%-8s %-7s %-7s %-6s %n", heading5, heading6, heading7, heading8);
     System.out.println(divider2);
     for (int i = 0; i < virtualRoboticPets.size(); i++) {
       System.out.printf("%-10s %-7s %-7s %-7s %n", virtualRoboticPets.get(i).getName(),
               virtualRoboticPets.get(i).getBatteryLevel(), virtualRoboticPets.get(i).getOilLevel(),
               virtualRoboticPets.get(i).getBoredom());
+    }
+  }
+
+  public void addOrganicPetToShelter() {
+    System.out.println("Please enter the organic pet's name");
+    Scanner addName = new Scanner(System.in);
+    String name = (addName.nextLine());
+
+    System.out.println("Please Enter the organic pet's Description");
+    Scanner addDescription = new Scanner(System.in);
+    String description = (addDescription.nextLine());
+
+    System.out.println("Please enter the organic pet's Hunger.");
+    Scanner addHunger = new Scanner(System.in);
+    int hunger = (addHunger.nextInt());
+
+    System.out.println("Please enter the organic pet's Thirst.");
+    Scanner addThirst = new Scanner(System.in);
+    int thirst = (addThirst.nextInt());
+
+    System.out.println("Please enter the organic pet's Boredom.");
+    Scanner addBoredom = new Scanner(System.in);
+    int boredom = (addBoredom.nextInt());
+
+    VirtualPet newOrganicPet = new VirtualPet(name, description, hunger, thirst, boredom);
+    virtualOrganicPets.add(newOrganicPet);
+  }
+
+  public void addRoboticPetToShelter() {
+    System.out.println("Please enter the robotic pet's name");
+    Scanner addName = new Scanner(System.in);
+    String name = (addName.nextLine());
+
+    System.out.println("Please Enter the robotic pet's Description");
+    Scanner addDescription = new Scanner(System.in);
+    String description = (addDescription.nextLine());
+
+    System.out.println("Please enter the robotic pet's Battery Level.");
+    Scanner addBatteryLevel = new Scanner(System.in);
+    int batteryLevel = (addBatteryLevel.nextInt());
+
+    System.out.println("Please enter the robotic pet's Oil Level.");
+    Scanner addOilLevel = new Scanner(System.in);
+    int oilLevel = (addOilLevel.nextInt());
+
+    System.out.println("Please enter the robotic pet's Boredom.");
+    Scanner addBoredom = new Scanner(System.in);
+    int boredom = (addBoredom.nextInt());
+
+    RoboticPet newRoboticPet = new RoboticPet(name, description, batteryLevel, oilLevel, boredom);
+    virtualRoboticPets.add(newRoboticPet);
+  }
+
+  public void removeOrganicPetFromShelter(String adoptName) {
+    virtualOrganicPets.removeIf(pet -> pet.getName().equalsIgnoreCase(adoptName));
+  }
+
+  public void removeRoboticPetFromShelter(String adoptName) {
+    virtualRoboticPets.removeIf(pet -> pet.getName().equalsIgnoreCase(adoptName));
+  }
+
+  public void feedAll() {
+    for (VirtualPet pet : virtualOrganicPets) {
+      pet.giveFood();
+      pet.tick();
+    }
+  }
+
+  public void waterAll() {
+    for (VirtualPet pet : virtualOrganicPets) {
+      pet.giveWater();
+      pet.tick();
+    }
+  }
+
+  public void playWithOrganic(String name) {
+    for (VirtualPet pet : virtualOrganicPets) {
+      if (pet.getName().equalsIgnoreCase(name)) {
+        pet.playWithOrganic(name);
+      } else {
+        pet.tick();
+      }
     }
   }
 

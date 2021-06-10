@@ -3,7 +3,7 @@ package virtual_pet;
 public class OrganicPet extends VirtualPet {
 
   protected int hunger;
-  String descripcion;
+  String description;
   protected int thirst;
 
   public OrganicPet (String name, String description, int hunger, int thirst, int borfedom){
