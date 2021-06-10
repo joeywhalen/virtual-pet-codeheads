@@ -3,10 +3,10 @@ package virtual_pet;
 public class VirtualPet extends VirtualPetShelter {
 
   private String name;
-  protected int boredom;
   private String description;
   private int hunger;
   private int thirst;
+  protected int boredom;
   private boolean isAlive;
   private int batteryLevel;
   private int oilLevel;
@@ -14,6 +14,10 @@ public class VirtualPet extends VirtualPetShelter {
   public VirtualPet(String name){
     this.name = name;
     this.boredom = boredom;
+  }
+
+  public VirtualPet(String yogi, String s, int i, int i1, int i2) {
+
   }
 
   public  void VirtualPetOrganic(String name, String description, int hunger, int thirst, int boredom) {
@@ -44,7 +48,15 @@ public class VirtualPet extends VirtualPetShelter {
     return name;
   }
 
+  public String getDescription() {
+    return description;
+  }
+
   public int getBoredom(){
     return boredom;
+  }
+
+  public Boolean isAlive() {
+    return true;
   }
 }
