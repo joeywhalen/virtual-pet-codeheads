@@ -12,6 +12,8 @@ public class Application {
 
     petShelter.displayAllOrganicPetsDescriptions();
     petShelter.displayAllRoboticPetsDescriptions();
+    petShelter.displayOrganicHealthStatus();
+    petShelter.displayRoboticHealthStatus();
 
   }
 

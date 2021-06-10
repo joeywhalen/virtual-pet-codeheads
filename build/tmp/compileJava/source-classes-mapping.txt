@@ -14,7 +14,7 @@ virtual_pet/OrganicGator.java
  virtual_pet.OrganicGator
 virtual_pet/VirtualPetShelter.java
  virtual_pet.VirtualPetShelter
-virtual_pet/Application.java
- virtual_pet.Application
 virtual_pet/RoboticBear.java
  virtual_pet.RoboticBear
+virtual_pet/Application.java
+ virtual_pet.Application
