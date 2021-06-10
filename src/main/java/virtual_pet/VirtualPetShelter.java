@@ -69,4 +69,54 @@ public class VirtualPetShelter {
     }
   }
 
+  public void checkOrganicHealthStatus() {
+    for (int i = 0; i < virtualOrganicPets.size(); i++) {
+      if ((virtualOrganicPets.get(i).getHunger() <= 0 || virtualOrganicPets.get(i).getThirst() <= 0 || virtualOrganicPets.get(i).getBoredom() <= 0)) {
+        isAlive = false;
+        System.out.println("");
+        System.out.println("You've neglected one of the pets!  We've been shut down!");
+        System.out.println("");
+        virtualOrganicPets.clear();
+        virtualRoboticPets.clear();
+        displayOrganicHealthStatus();
+        System.exit(0);
+      }
+    }
+  }
+
+  public void displayOrganicHealthStatus() {
+    System.out.printf("%-8s %-7s %-7s %-7s %n", heading1, heading2, heading3, heading4);
+    System.out.println(divider);
+    for (int i = 0; i < virtualOrganicPets.size(); i++) {
+      System.out.printf("%-10s %-7s %-7s %-7s %n", virtualOrganicPets.get(i).getName(),
+              virtualOrganicPets.get(i).getHunger(), virtualOrganicPets.get(i).getThirst(),
+              virtualOrganicPets.get(i).getBoredom());
+    }
+  }
+
+  public void checkRoboticHealthStatus() {
+    for (int i = 0; i < virtualRoboticPets.size(); i++) {
+      if ((virtualRoboticPets.get(i).getBatteryLevel() <= 0 || virtualRoboticPets.get(i).getOilLevel() <= 0 || virtualRoboticPets.get(i).getBoredom() <= 0)) {
+        isAlive = false;
+        System.out.println("");
+        System.out.println("You've neglected one of the pets!  We've been shut down!");
+        System.out.println("");
+        virtualOrganicPets.clear();
+        virtualRoboticPets.clear();
+        displayRoboticHealthStatus();
+        System.exit(0);
+      }
+    }
+  }
+
+  public void displayRoboticHealthStatus() {
+    System.out.printf("%-8s %-7s %-7s %-7s %n", heading5, heading6, heading7, heading8);
+    System.out.println(divider2);
+    for (int i = 0; i < virtualRoboticPets.size(); i++) {
+      System.out.printf("%-10s %-7s %-7s %-7s %n", virtualRoboticPets.get(i).getName(),
+              virtualRoboticPets.get(i).getBatteryLevel(), virtualRoboticPets.get(i).getOilLevel(),
+              virtualRoboticPets.get(i).getBoredom());
+    }
+  }
+
 }

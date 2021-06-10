@@ -3,12 +3,18 @@ package virtual_pet;
 public class OrganicPet extends VirtualPet {
 
   protected int hunger;
+  String descripcion;
   protected int thirst;
 
   public OrganicPet (String name, String description, int hunger, int thirst, int borfedom){
     super(name);
     this.hunger = hunger;
     this.thirst = thirst;
+  }
+
+  public OrganicPet(String name, String description) {
+    super(name);
+    this.description = description;
   }
 
   public OrganicPet(String name) {

@@ -3,7 +3,7 @@ package virtual_pet;
 public class VirtualPet extends VirtualPetShelter {
 
   private String name;
-  private String description;
+  String description;
   private int hunger;
   private int thirst;
   protected int boredom;
@@ -64,6 +64,22 @@ public class VirtualPet extends VirtualPetShelter {
 
   public String getDescription() {
     return description;
+  }
+
+  public int getHunger() {
+    return hunger;
+  }
+
+  public int getThirst() {
+    return thirst;
+  }
+
+  public int getBatteryLevel() {
+    return batteryLevel;
+  }
+
+  public int getOilLevel() {
+    return oilLevel;
   }
 
   public int getBoredom(){
