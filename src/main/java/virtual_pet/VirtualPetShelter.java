@@ -8,7 +8,7 @@ public class VirtualPetShelter {
   int adoptPet;
   boolean isAlive = true;
 
-  ArrayList<VirtualPet> virtualOrganicPets = new ArrayList<VirtualPet>();
+  ArrayList<VirtualPet> virtualOrganicPets = new ArrayList<VirtualPet>(); //ArrayList<VirtualPetOrganic> virtualOrganicPets = new ArrayList<VirtualPetOrganic>();
   ArrayList<VirtualPet> virtualRoboticPets = new ArrayList<VirtualPet>();
   //Scanner userInput =
 
@@ -53,6 +53,20 @@ public class VirtualPetShelter {
     virtualRoboticPets.add(gummy);
     virtualRoboticPets.add(benali);
     virtualRoboticPets.add(gabby);
+  }
+
+  public void displayAllOrganicPetsDescriptions() {
+    for (VirtualPet virtualOrganicPet : virtualOrganicPets) {
+      System.out.println("[" + virtualOrganicPet.getName() + "]" + " " + virtualOrganicPet.getDescription());
+      System.out.println("");
+    }
+  }
+
+  public void displayAllRoboticPetsDescriptions() {
+    for (int i = 0; i < virtualRoboticPets.size(); i++) {
+      System.out.println("[" + virtualRoboticPets.get(i).getName() + "]" + " " + virtualRoboticPets.get(i).getDescription());
+      System.out.println("");
+    }
   }
 
 }

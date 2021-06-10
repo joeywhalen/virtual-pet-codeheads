@@ -5,10 +5,14 @@ public class OrganicPet extends VirtualPet {
   protected int hunger;
   protected int thirst;
 
-  public OrganicPet (String name){
+  public OrganicPet (String name, String description, int hunger, int thirst, int borfedom){
     super(name);
     this.hunger = hunger;
     this.thirst = thirst;
+  }
+
+  public OrganicPet(String name) {
+    super(name);
   }
 
   public void giveFood() {

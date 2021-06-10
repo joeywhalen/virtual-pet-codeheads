@@ -11,14 +11,22 @@ public class VirtualPet extends VirtualPetShelter {
   private int batteryLevel;
   private int oilLevel;
 
-  public VirtualPet(String name){
+  public VirtualPet(String name, String description, int hunger, int thirst, int boredom){
     this.name = name;
     this.boredom = boredom;
+    this.hunger = hunger;
+    this.thirst = thirst;
+    this.boredom = boredom;
+    isAlive = true;
   }
 
-  public VirtualPet(String yogi, String s, int i, int i1, int i2) {
-
+  public VirtualPet(String name) {
+    super();
   }
+
+//  public VirtualPet(String name, String description, int hunger, int thirst, int boredom) {
+//
+//  }
 
   public  void VirtualPetOrganic(String name, String description, int hunger, int thirst, int boredom) {
     this.name = name;
@@ -42,8 +50,14 @@ public class VirtualPet extends VirtualPetShelter {
     hunger = Math.min(Math.max(hunger - 5, 0), 100);
     thirst = Math.min(Math.max(thirst - 5, 0), 100);
     boredom = Math.min(Math.max(boredom - 5, 0), 100);
-
   }
+
+  public void roboticTick() {
+    oilLevel = Math.min(Math.max(oilLevel - 5, 0), 100);
+    batteryLevel = Math.min(Math.max(batteryLevel - 5, 0), 100);
+    boredom = Math.min(Math.max(boredom - 5, 0), 100);
+  }
+
   public String getName() {
     return name;
   }
