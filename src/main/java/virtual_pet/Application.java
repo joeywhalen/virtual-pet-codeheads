@@ -13,14 +13,14 @@ public class Application {
 
     System.out.println("Thank you for volunteering at The Codeheads Virtual Pet Shelter!");
 
-//    petShelter.displayAllOrganicPetsDescriptions();
-//    petShelter.displayAllRoboticPetsDescriptions();
-//    petShelter.checkOrganicHealthStatus();
-//    petShelter.displayOrganicHealthStatus();
-//    System.out.println(" ");
-//    petShelter.checkRoboticHealthStatus();
-//    petShelter.displayRoboticHealthStatus();
-//    System.out.println(" ");
+    petShelter.displayAllOrganicPetsDescriptions();
+    petShelter.displayAllRoboticPetsDescriptions();
+    petShelter.checkOrganicHealthStatus();
+    petShelter.displayOrganicHealthStatus();
+    System.out.println(" ");
+    petShelter.checkRoboticHealthStatus();
+    petShelter.displayRoboticHealthStatus();
+    System.out.println(" ");
 //    petShelter.addOrganicPetToShelter();
 //    System.out.println(" ");
 //    petShelter.displayAllOrganicPetsDescriptions();
@@ -98,17 +98,17 @@ public class Application {
 //    System.out.println(" ");
 //    petShelter.displayRoboticHealthStatus();
 
-    petShelter.displayRoboticHealthStatus();
-    System.out.println("Okay, please choose a robotic pet to walk.");
-    System.out.println(" ");
-    petShelter.displayAllRoboticPetsDescriptions();
-    System.out.println(" ");
-    System.out.println("Which pet have you chosen? ");
-    String walkName = userInput.nextLine();
-    petShelter.walkRobotic(walkName);
-    System.out.println(" ");
-    petShelter.displayRoboticHealthStatus();
-    petShelter.checkRoboticHealthStatus();
+//    petShelter.displayRoboticHealthStatus();
+//    System.out.println("Okay, please choose a robotic pet to walk.");
+//    System.out.println(" ");
+//    petShelter.displayAllRoboticPetsDescriptions();
+//    System.out.println(" ");
+//    System.out.println("Which pet have you chosen? ");
+//    String walkName = userInput.nextLine();
+//    petShelter.walkRobotic(walkName);
+//    System.out.println(" ");
+//    petShelter.displayRoboticHealthStatus();
+//    petShelter.checkRoboticHealthStatus();
 
   }
 

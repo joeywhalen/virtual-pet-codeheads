@@ -6,10 +6,11 @@ public class OrganicPet extends VirtualPet {
   String description;
   protected int thirst;
 
-  public OrganicPet (String name, String description, int hunger, int thirst, int borfedom){
+  public OrganicPet (String name, String description, int hunger, int thirst, int borfedom, int waste){
     super(name);
     this.hunger = hunger;
     this.thirst = thirst;
+    this.waste = waste;
   }
 
   public OrganicPet(String name, String description) {
@@ -25,6 +26,7 @@ public class OrganicPet extends VirtualPet {
     hunger += 15;
     thirst -= 5;
     boredom += 10;
+    waste -= 10;
     tick();
   }
 
@@ -32,6 +34,7 @@ public class OrganicPet extends VirtualPet {
     thirst += 15;
     hunger += 5;
     boredom -= 5;
+    waste -= 10;
     tick();
   }
 
@@ -40,6 +43,21 @@ public class OrganicPet extends VirtualPet {
     hunger -= 10;
     thirst -= 5;
     tick();
+  }
+
+  public void walkOrganic(String name) {
+    hunger -= 10;
+    thirst -= 5;
+    boredom += 15;
+    waste += 25;
+    tick();
+  }
+
+  public void cleanCages() {
+    waste = 100;
+    hunger -= 5;
+    thirst -= 5;
+    boredom -= 5;
   }
 
   public int getHunger() {

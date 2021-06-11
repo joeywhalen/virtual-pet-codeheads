@@ -7,16 +7,18 @@ public class VirtualPet extends VirtualPetShelter {
   private int hunger;
   private int thirst;
   protected int boredom;
+  protected int waste;
   private boolean isAlive;
   private int batteryLevel;
   private int oilLevel;
 
-  public VirtualPet(String name, String description, int hunger, int thirst, int boredom){
+  public VirtualPet(String name, String description, int hunger, int thirst, int boredom, int waste){
     this.name = name;
+    this.description = description;
     this.boredom = boredom;
     this.hunger = hunger;
     this.thirst = thirst;
-    this.description = description;
+    this.waste = waste;
     isAlive = true;
   }
 
@@ -55,6 +57,7 @@ public class VirtualPet extends VirtualPetShelter {
     hunger += 15;
     thirst -= 5;
     boredom += 10;
+    waste -= 10;
     tick();
   }
 
@@ -62,6 +65,7 @@ public class VirtualPet extends VirtualPetShelter {
     thirst += 15;
     hunger += 5;
     boredom -= 5;
+    waste -= 10;
     tick();
   }
 
@@ -70,6 +74,21 @@ public class VirtualPet extends VirtualPetShelter {
     hunger -= 10;
     thirst -= 5;
     tick();
+  }
+
+  public void walkOrganic(String name) {
+    hunger -= 10;
+    thirst -= 5;
+    boredom += 15;
+    waste += 25;
+    tick();
+  }
+
+  public void cleanCages() {
+    hunger -= 5;
+    thirst -= 5;
+    boredom -= 5;
+    waste = 100;
   }
 
   public void chargeBattery() {
@@ -104,6 +123,7 @@ public class VirtualPet extends VirtualPetShelter {
     hunger = Math.min(Math.max(hunger - 5, 0), 100);
     thirst = Math.min(Math.max(thirst - 5, 0), 100);
     boredom = Math.min(Math.max(boredom - 5, 0), 100);
+    waste = Math.min(Math.max(boredom - 5, 0), 100);
   }
 
   public void roboticTick() {
@@ -139,6 +159,8 @@ public class VirtualPet extends VirtualPetShelter {
   public int getBoredom(){
     return boredom;
   }
+
+  public int getWaste() { return waste;}
 
   public Boolean isAlive() {
     return true;

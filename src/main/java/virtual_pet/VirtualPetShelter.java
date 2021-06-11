@@ -16,22 +16,23 @@ public class VirtualPetShelter {
   String heading2 = "|Hunger";
   String heading3 = "|Thirst";
   String heading4 = "|Boredom";
-  String divider = "---------|-------|-------|-------";
+  String heading5 = "|Waste";
+  String divider = "---------|-------|-------|-------|-------";
 
-  String heading5 = "Name";
-  String heading6 = "|Battery";
-  String heading7 = "|Oil";
-  String heading8 = "|Boredom";
+  String heading6 = "Name";
+  String heading7 = "|Battery";
+  String heading8 = "|Oil";
+  String heading9 = "|Boredom";
   String divider2 = "---------|-------|-------|-------";
 
 
   public void initialOrganicPets() {
-    VirtualPet yogi = new VirtualPet("Yogi", "Not your av-er-age bear.", 50, 50, 50);
-    VirtualPet smokey = new VirtualPet("Smokey", "Only YOU can prevent forest fires.", 40, 40, 40);
-    VirtualPet winnie = new VirtualPet("Winnie", "I have a rumbly in my tumbly.", 25, 40, 60);
-    VirtualPet gummi = new VirtualPet("Gummi", "Once was candy for kids, now 'candy' for adults.", 25, 60, 420);
-    VirtualPet ticktock = new VirtualPet("Tick-Tock", "I swallowed a clock.  So what?", 40, 50, 60);
-    VirtualPet wally = new VirtualPet("WallyGator", "Yea, I'm prone to mishaps.  So what?", 50, 60, 70);
+    VirtualPet yogi = new VirtualPet("Yogi", "Not your av-er-age bear.", 50, 50, 50, 100);
+    VirtualPet smokey = new VirtualPet("Smokey", "Only YOU can prevent forest fires.", 40, 40, 40, 100);
+    VirtualPet winnie = new VirtualPet("Winnie", "I have a rumbly in my tumbly.", 25, 40, 60, 100);
+    VirtualPet gummi = new VirtualPet("Gummi", "Once was candy for kids, now 'candy' for adults.", 25, 60, 420, 100);
+    VirtualPet ticktock = new VirtualPet("Tick-Tock", "I swallowed a clock.  So what?", 40, 50, 60, 100);
+    VirtualPet wally = new VirtualPet("WallyGator", "Yea, I'm prone to mishaps.  So what?", 50, 60, 70, 100);
     virtualOrganicPets.add(yogi);
     virtualOrganicPets.add(smokey);
     virtualOrganicPets.add(winnie);
@@ -71,7 +72,8 @@ public class VirtualPetShelter {
 
   public void checkOrganicHealthStatus() {
     for (int i = 0; i < virtualOrganicPets.size(); i++) {
-      if ((virtualOrganicPets.get(i).getHunger() <= 0 || virtualOrganicPets.get(i).getThirst() <= 0 || virtualOrganicPets.get(i).getBoredom() <= 0)) {
+      if ((virtualOrganicPets.get(i).getHunger() <= 0 || virtualOrganicPets.get(i).getThirst() <= 0 ||
+              virtualOrganicPets.get(i).getBoredom() <= 0 || virtualOrganicPets.get(i).getWaste() <= 0)) {
         isAlive = false;
         System.out.println("");
         System.out.println("You've neglected one of the pets!  We've been shut down!");
@@ -85,18 +87,19 @@ public class VirtualPetShelter {
   }
 
   public void displayOrganicHealthStatus() {
-    System.out.printf("%-8s %-7s %-7s %-7s %n", heading1, heading2, heading3, heading4);
+    System.out.printf("%-8s %-7s %-7s %-7s %-7s %n", heading1, heading2, heading3, heading4, heading5);
     System.out.println(divider);
-    for (int i = 0; i < virtualOrganicPets.size(); i++) {
-      System.out.printf("%-10s %-7s %-7s %-7s %n", virtualOrganicPets.get(i).getName(),
-              virtualOrganicPets.get(i).getHunger(), virtualOrganicPets.get(i).getThirst(),
-              virtualOrganicPets.get(i).getBoredom());
+    for (VirtualPet virtualOrganicPet : virtualOrganicPets) {
+      System.out.printf("%-10s %-7s %-7s %-7s %-7s %n", virtualOrganicPet.getName(),
+              virtualOrganicPet.getHunger(), virtualOrganicPet.getThirst(),
+              virtualOrganicPet.getBoredom(), virtualOrganicPet.getWaste());
     }
   }
 
   public void checkRoboticHealthStatus() {
     for (int i = 0; i < virtualRoboticPets.size(); i++) {
-      if ((virtualRoboticPets.get(i).getBatteryLevel() <= 0 || virtualRoboticPets.get(i).getOilLevel() <= 0 || virtualRoboticPets.get(i).getBoredom() <= 0)) {
+      if ((virtualRoboticPets.get(i).getBatteryLevel() <= 0 || virtualRoboticPets.get(i).getOilLevel() <= 0
+              || virtualRoboticPets.get(i).getBoredom() <= 0)) {
         isAlive = false;
         System.out.println("");
         System.out.println("You've neglected one of the pets!  We've been shut down!");
@@ -110,12 +113,12 @@ public class VirtualPetShelter {
   }
 
   public void displayRoboticHealthStatus() {
-    System.out.printf("%-8s %-7s %-7s %-6s %n", heading5, heading6, heading7, heading8);
+    System.out.printf("%-8s %-7s %-7s %-6s %n", heading6, heading7, heading8, heading9);
     System.out.println(divider2);
-    for (int i = 0; i < virtualRoboticPets.size(); i++) {
-      System.out.printf("%-10s %-7s %-7s %-7s %n", virtualRoboticPets.get(i).getName(),
-              virtualRoboticPets.get(i).getBatteryLevel(), virtualRoboticPets.get(i).getOilLevel(),
-              virtualRoboticPets.get(i).getBoredom());
+    for (VirtualPet virtualRoboticPet : virtualRoboticPets) {
+      System.out.printf("%-10s %-7s %-7s %-7s %n", virtualRoboticPet.getName(),
+              virtualRoboticPet.getBatteryLevel(), virtualRoboticPet.getOilLevel(),
+              virtualRoboticPet.getBoredom());
     }
   }
 
@@ -140,7 +143,11 @@ public class VirtualPetShelter {
     Scanner addBoredom = new Scanner(System.in);
     int boredom = (addBoredom.nextInt());
 
-    VirtualPet newOrganicPet = new VirtualPet(name, description, hunger, thirst, boredom);
+    System.out.println("Please enter the organic pet's Waste.");
+    Scanner addWaste = new Scanner(System.in);
+    int waste = (addWaste.nextInt());
+
+    VirtualPet newOrganicPet = new VirtualPet(name, description, hunger, thirst, boredom, waste);
     virtualOrganicPets.add(newOrganicPet);
   }
 
@@ -198,6 +205,23 @@ public class VirtualPetShelter {
       } else {
         pet.tick();
       }
+    }
+  }
+
+  public void walkOrganic(String name) {
+    for (VirtualPet pet : virtualOrganicPets) {
+      if (pet.getName().equalsIgnoreCase(name)) {
+        pet.walkOrganic(name);
+      } else {
+        pet.tick();
+      }
+    }
+  }
+
+  public void cleanAllCages() {
+    for (VirtualPet pet : virtualOrganicPets) {
+      pet.cleanCages();
+      pet.tick();
     }
   }
 
