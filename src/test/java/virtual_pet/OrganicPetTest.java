@@ -6,30 +6,18 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class VirtualPetTest {
+public class OrganicPetTest {
 
-  VirtualPet underTest;
+  OrganicPet underTest;
 
   @BeforeEach
   public void setUp() {
-    underTest = new VirtualPet("Yogi", "Smarter than the average Bear!", 50, 45, 40, 50);
+    underTest = new OrganicPet("Yogi", "Smarter than the average Bear!", 50, 45, 40, 50);
   }
 
   @Test
   public void shouldInstantiateClass() {
 
-  }
-
-  @Test
-  public void shouldGetNewPetNameFromConstructor() {
-    String name = underTest.getName();
-    assertEquals("Yogi", underTest.getName());
-  }
-
-  @Test
-  public void shouldGetDescriptionFromConstructor() {
-    String description = underTest.getDescription();
-    assertEquals("Smarter than the average Bear!", underTest.getDescription());
   }
 
   @Test
@@ -47,17 +35,14 @@ public class VirtualPetTest {
     assertEquals(40, underTest.getBoredom());
   }
 
-
   @Test
   public void shouldAcceptWasteFromConstructor() {
     assertEquals(50, underTest.getWaste());
   }
-
 
   @Test
   public void shouldCheckIfPetIsAlive() {
     Boolean isAlive = underTest.isAlive();
     assertEquals(true, underTest.isAlive());
   }
-
 }

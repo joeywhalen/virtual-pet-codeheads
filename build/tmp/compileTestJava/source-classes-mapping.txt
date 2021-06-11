@@ -1,0 +1,8 @@
+virtual_pet/VirtualPetShelterTest.java
+ virtual_pet.VirtualPetShelterTest
+virtual_pet/VirtualPetTest.java
+ virtual_pet.VirtualPetTest
+virtual_pet/RoboticPetTest.java
+ virtual_pet.RoboticPetTest
+virtual_pet/OrganicPetTest.java
+ virtual_pet.OrganicPetTest
