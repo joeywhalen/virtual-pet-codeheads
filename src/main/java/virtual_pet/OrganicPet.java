@@ -35,7 +35,7 @@ public class OrganicPet extends VirtualPet {
     tick();
   }
 
-  public void playWith() {
+  public void playWithOrganic(String name) {
     boredom += 15;
     hunger -= 10;
     thirst -= 5;

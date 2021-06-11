@@ -54,26 +54,61 @@ public class Application {
 //    petShelter.displayAllRoboticPetsDescriptions();
 //    petShelter.displayRoboticHealthStatus();
 
-    petShelter.displayOrganicHealthStatus();
-    petShelter.feedAll();
-    System.out.println(" ");
-    petShelter.displayOrganicHealthStatus();
+//    petShelter.displayOrganicHealthStatus();
+//    petShelter.feedAll();
+//    System.out.println(" ");
+//    petShelter.displayOrganicHealthStatus();
+//
+//    petShelter.displayOrganicHealthStatus();
+//    petShelter.waterAll();
+//    System.out.println(" ");
+//    petShelter.displayOrganicHealthStatus();
+//
+//    petShelter.displayOrganicHealthStatus();
+//    System.out.println("Okay, please choose an Organic pet to play with.");
+//    System.out.println(" ");
+//    petShelter.displayAllOrganicPetsDescriptions();
+//    System.out.println(" ");
+//    System.out.println("Which pet have you chosen? ");
+//    String name = userInput.nextLine();
+//    petShelter.playWithOrganic(name);
+//    System.out.println(" ");
+//    petShelter.displayOrganicHealthStatus();
+//    petShelter.checkOrganicHealthStatus();
 
-    petShelter.displayOrganicHealthStatus();
-    petShelter.waterAll();
-    System.out.println(" ");
-    petShelter.displayOrganicHealthStatus();
+//    petShelter.displayRoboticHealthStatus();
+//    System.out.println("Okay, please choose a robotic pet to play with.");
+//    System.out.println(" ");
+//    petShelter.displayAllRoboticPetsDescriptions();
+//    System.out.println(" ");
+//    System.out.println("Which pet have you chosen? ");
+//    String playName = userInput.nextLine();
+//    petShelter.playWithRobotic(playName);
+//    System.out.println(" ");
+//    petShelter.displayRoboticHealthStatus();
+//    petShelter.checkRoboticHealthStatus();
 
-    System.out.println("Okay, please choose a pet to play with.");
+//    petShelter.displayRoboticHealthStatus();
+//    petShelter.chargeAll();
+//    System.out.println(" ");
+//    petShelter.displayRoboticHealthStatus();
+
+//    petShelter.displayRoboticHealthStatus();
+//    petShelter.oilAll();
+//    System.out.println(" ");
+//    petShelter.displayRoboticHealthStatus();
+
+    petShelter.displayRoboticHealthStatus();
+    System.out.println("Okay, please choose a robotic pet to walk.");
     System.out.println(" ");
-    petShelter.displayAllOrganicPetsDescriptions();
+    petShelter.displayAllRoboticPetsDescriptions();
     System.out.println(" ");
     System.out.println("Which pet have you chosen? ");
-    String name = userInput.nextLine();
-    petShelter.playWithOrganic(name);
+    String walkName = userInput.nextLine();
+    petShelter.walkRobotic(walkName);
     System.out.println(" ");
-    petShelter.displayOrganicHealthStatus();
-    petShelter.checkOrganicHealthStatus();
+    petShelter.displayRoboticHealthStatus();
+    petShelter.checkRoboticHealthStatus();
 
   }
 

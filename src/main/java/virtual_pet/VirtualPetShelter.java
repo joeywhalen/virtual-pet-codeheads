@@ -201,4 +201,48 @@ public class VirtualPetShelter {
     }
   }
 
+  public void chargeAll() {
+    for (VirtualPet pet : virtualRoboticPets) {
+      pet.chargeBattery();
+      pet.tick();
+    }
+  }
+
+  public void oilAll() {
+    for (VirtualPet pet : virtualRoboticPets) {
+      pet.oilRobotic();
+      pet.tick();
+    }
+  }
+
+  public void playWithRobotic(String name) {
+    for (VirtualPet pet : virtualRoboticPets) {
+      if (pet.getName().equalsIgnoreCase(name)) {
+        pet.playWithRobotic(name);
+      } else {
+        pet.roboticTick();
+      }
+    }
+  }
+
+  public void walkRobotic(String name) {
+    for (VirtualPet pet : virtualRoboticPets) {
+      if (pet.getName().equalsIgnoreCase(name)) {
+        pet.walkRobotic(name);
+      } else {
+        pet.roboticTick();
+      }
+    }
+  }
+
+  public void tick() {
+    for (VirtualPet pet : virtualOrganicPets) {
+      pet.tick();
+    }
+  }
+
+  public Boolean isAlive() {
+    return true;
+  }
+
 }
