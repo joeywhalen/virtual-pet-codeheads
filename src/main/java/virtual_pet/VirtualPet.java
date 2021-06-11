@@ -76,28 +76,28 @@ public class VirtualPet extends VirtualPetShelter {
     batteryLevel = 100;
     oilLevel -= 5;
     boredom -= 10;
-    tick();
+    roboticTick();
   }
 
   public void oilRobotic() {
     batteryLevel -= 10;
     oilLevel = 100;
     boredom -= 10;
-    tick();
+    roboticTick();
   }
 
   public void playWithRobotic(String name) {
     batteryLevel -= 10;
     oilLevel -= 10;
     boredom += 15;
-    tick();
+    roboticTick();
   }
 
   public void walkRobotic(String name) {
     batteryLevel -= 20;
     oilLevel -= 20;
     boredom += 20;
-    tick();
+    roboticTick();
   }
 
   public void tick() {

@@ -25,28 +25,28 @@ public class RoboticPet extends VirtualPet {
     batteryLevel = 100;
     oilLevel -= 5;
     boredom -= 10;
-    tick();
+    roboticTick();
   }
 
   public void oilRobotic() {
     batteryLevel -= 10;
     oilLevel = 100;
     boredom -= 10;
-    tick();
+    roboticTick();
   }
 
   public void playWithRobotic(String name) {
     batteryLevel -= 20;
     oilLevel -= 20;
     boredom += 20;
-    tick();
+    roboticTick();
   }
 
   public void walkRobotic(String name) {
     batteryLevel -= 20;
     oilLevel -= 20;
     boredom += 20;
-    tick();
+    roboticTick();
   }
 
   //Should def go in robotic class!

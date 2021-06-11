@@ -204,14 +204,14 @@ public class VirtualPetShelter {
   public void chargeAll() {
     for (VirtualPet pet : virtualRoboticPets) {
       pet.chargeBattery();
-      pet.tick();
+      pet.roboticTick();
     }
   }
 
   public void oilAll() {
     for (VirtualPet pet : virtualRoboticPets) {
       pet.oilRobotic();
-      pet.tick();
+      pet.roboticTick();
     }
   }
 
