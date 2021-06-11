@@ -265,6 +265,12 @@ public class VirtualPetShelter {
     }
   }
 
+  public void roboticTick() {
+    for (VirtualPet pet : virtualRoboticPets) {
+      pet.roboticTick();
+    }
+  }
+
   public Boolean isAlive() {
     return true;
   }

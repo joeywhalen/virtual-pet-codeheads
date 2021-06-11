@@ -89,6 +89,7 @@ public class VirtualPet extends VirtualPetShelter {
     thirst -= 5;
     boredom -= 5;
     waste = 100;
+    tick();
   }
 
   public void chargeBattery() {

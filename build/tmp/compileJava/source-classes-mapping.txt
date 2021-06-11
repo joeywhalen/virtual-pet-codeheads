@@ -2,16 +2,16 @@ virtual_pet/Walkable.java
  virtual_pet.Walkable
 virtual_pet/Application.java
  virtual_pet.Application
-virtual_pet/VirtualPet.java
- virtual_pet.VirtualPet
 virtual_pet/RoboticBear.java
  virtual_pet.RoboticBear
+virtual_pet/VirtualPet.java
+ virtual_pet.VirtualPet
+virtual_pet/VirtualPetShelter.java
+ virtual_pet.VirtualPetShelter
 virtual_pet/RoboticPet.java
  virtual_pet.RoboticPet
 virtual_pet/RoboticGator.java
  virtual_pet.RoboticGator
-virtual_pet/VirtualPetShelter.java
- virtual_pet.VirtualPetShelter
 virtual_pet/OrganicPet.java
  virtual_pet.OrganicPet
 virtual_pet/OrganicBear.java
